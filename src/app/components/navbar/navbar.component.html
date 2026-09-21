@@ -1,0 +1,57 @@
+<header class="nav" [class.nav--scrolled]="scrolled()">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#home" (click)="closeMenu()">
+      <span class="nav__mark">K</span>
+      <span class="nav__brand-text">{{ profile.name }}</span>
+    </a>
+
+    <nav class="nav__links">
+      <a
+        *ngFor="let link of links"
+        [href]="'#' + link.fragment"
+        class="nav__link"
+        [class.nav__link--active]="activeFragment() === link.fragment"
+      >
+        {{ link.label }}
+      </a>
+    </nav>
+
+    <a
+      class="nav__cta"
+      [href]="downloads.resume.href"
+      [download]="downloads.resume.filename"
+    >
+      <p-button
+        label="Resume"
+        icon="pi pi-download"
+        size="small"
+        [rounded]="true"
+      ></p-button>
+    </a>
+
+    <button class="nav__burger" (click)="toggleMenu()" aria-label="Toggle menu">
+      <i class="pi" [ngClass]="menuOpen() ? 'pi-times' : 'pi-bars'"></i>
+    </button>
+  </div>
+
+  <div class="nav__mobile" [class.nav__mobile--open]="menuOpen()">
+    <a
+      *ngFor="let link of links"
+      [href]="'#' + link.fragment"
+      class="nav__mobile-link"
+      (click)="closeMenu()"
+    >
+      <i [class]="link.icon"></i>
+      {{ link.label }}
+    </a>
+    <a
+      class="nav__mobile-link nav__mobile-link--cta"
+      [href]="downloads.resume.href"
+      [download]="downloads.resume.filename"
+      (click)="closeMenu()"
+    >
+      <i class="pi pi-download"></i>
+      Download Resume
+    </a>
+  </div>
+</header>

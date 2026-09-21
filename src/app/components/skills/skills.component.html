@@ -1,0 +1,24 @@
+<section class="skills section">
+  <span class="section-kicker" appReveal>Toolbox</span>
+  <h2 class="section-title" appReveal="1">Skills &amp; Technologies</h2>
+  <p class="section-sub" appReveal="2">
+    The stack I reach for, from enterprise backends and cloud infrastructure to the
+    Generative AI tools I use every week.
+  </p>
+
+  <div class="skills__grid">
+    <div
+      class="skills__group glass-card"
+      *ngFor="let group of groups; let i = index"
+      [appReveal]="i + 1"
+    >
+      <div class="skills__group-head">
+        <span class="skills__group-icon"><i [class]="group.icon"></i></span>
+        <h3>{{ group.title }}</h3>
+      </div>
+      <div class="skills__chips">
+        <p-chip *ngFor="let skill of group.skills" [label]="skill" styleClass="skills__chip"></p-chip>
+      </div>
+    </div>
+  </div>
+</section>

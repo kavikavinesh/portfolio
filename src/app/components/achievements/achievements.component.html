@@ -1,0 +1,36 @@
+<section class="achievements section">
+  <span class="section-kicker" appReveal>Recognition</span>
+  <h2 class="section-title" appReveal="1">Achievements</h2>
+  <p class="section-sub" appReveal="2">
+    Recognized company-wide at Accenture Celebrates Excellence for innovation and individual
+    performance.
+  </p>
+
+  <div class="achievements__grid">
+    <div class="achievements__award glass-card" appReveal="1">
+      <p-image
+        [src]="achievements[0].image"
+        alt="Accenture Celebrates Excellence — Inspiring Innovator Award certificate"
+        [preview]="true"
+        imageClass="achievements__award-img"
+      ></p-image>
+    </div>
+
+    <div class="achievements__list">
+      <div
+        class="achievements__item glass-card"
+        *ngFor="let item of achievements; let i = index"
+        [appReveal]="i + 2"
+      >
+        <div class="achievements__icon">
+          <i class="pi pi-star-fill"></i>
+        </div>
+        <div>
+          <h3 class="achievements__title">{{ item.title }}</h3>
+          <p class="achievements__issuer">{{ item.issuer }} · {{ item.period }}</p>
+          <p class="achievements__desc">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

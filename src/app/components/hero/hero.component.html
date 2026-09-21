@@ -1,0 +1,62 @@
+<section class="hero">
+  <div class="hero__aura hero__aura--gold"></div>
+  <div class="hero__aura hero__aura--maroon"></div>
+  <div class="hero__grid"></div>
+
+  <div class="hero__inner section">
+    <div class="hero__copy">
+      <p-tag
+        styleClass="hero__badge"
+        icon="pi pi-map-marker"
+        value="Chennai, India · Open to AI Engineering roles"
+      ></p-tag>
+
+      <h1 class="hero__title">
+        Hi, I'm <span class="hero__name">Kavinesh Kumar</span>
+      </h1>
+
+      <p class="hero__lede">{{ profile.tagline }}</p>
+
+      <div class="hero__roles">
+        <span class="hero__role" *ngFor="let word of roleWords">
+          <i class="pi pi-circle-fill"></i>{{ word }}
+        </span>
+      </div>
+
+      <div class="hero__actions">
+        <a [href]="'#' + 'contact'">
+          <p-button label="Let's talk" icon="pi pi-send" [rounded]="true"></p-button>
+        </a>
+        <a [href]="downloads.resume.href" [download]="downloads.resume.filename">
+          <p-button label="Download Resume" icon="pi pi-download" [rounded]="true" severity="secondary" [outlined]="true"></p-button>
+        </a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="hero__stat" *ngFor="let stat of profile.stats">
+          <span class="hero__stat-value">{{ stat.value }}</span>
+          <span class="hero__stat-label">{{ stat.label }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__portrait">
+      <div class="hero__portrait-frame">
+        <img [src]="heroImage" alt="Portrait of Kavinesh Kumar" loading="eager" />
+      </div>
+      <div class="hero__portrait-chip hero__portrait-chip--top">
+        <i class="pi pi-verified"></i>
+        <span>2× Microsoft Certified</span>
+      </div>
+      <div class="hero__portrait-chip hero__portrait-chip--bottom">
+        <i class="pi pi-briefcase"></i>
+        <span>Currently @ Boeing</span>
+      </div>
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#about" aria-label="Scroll to About">
+    <span></span>
+    Scroll
+  </a>
+</section>

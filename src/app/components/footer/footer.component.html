@@ -1,0 +1,25 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="footer__mark">K</span>
+      <div>
+        <p class="footer__name">{{ profile.name }}</p>
+        <p class="footer__role">{{ profile.title }}</p>
+      </div>
+    </div>
+
+    <nav class="footer__links">
+      <a *ngFor="let link of links" [href]="'#' + link.fragment">{{ link.label }}</a>
+    </nav>
+
+    <div class="footer__social">
+      <a [href]="'mailto:' + profile.email" aria-label="Email"><i class="pi pi-envelope"></i></a>
+      <a [href]="profile.linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="pi pi-linkedin"></i></a>
+      <a [href]="'tel:' + profile.phone" aria-label="Phone"><i class="pi pi-phone"></i></a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p>&copy; {{ year }} {{ profile.name }}. Designed &amp; built with Angular + PrimeNG.</p>
+  </div>
+</footer>

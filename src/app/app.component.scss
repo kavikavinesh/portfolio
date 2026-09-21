@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+main {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+::ng-deep .p-scrolltop {
+  background: linear-gradient(135deg, var(--gold), var(--maroon)) !important;
+  width: 3rem !important;
+  height: 3rem !important;
+}

@@ -1,0 +1,38 @@
+<section class="experience section">
+  <span class="section-kicker" appReveal>Career Path</span>
+  <h2 class="section-title" appReveal="1">Work Experience</h2>
+  <p class="section-sub" appReveal="2">
+    Four years across aerospace and business-consulting engineering — from enterprise .NET systems
+    to AI-augmented applications.
+  </p>
+
+  <div class="timeline">
+    <div class="timeline__rail"></div>
+
+    <article
+      class="timeline__item"
+      *ngFor="let job of experience; let i = index"
+      [appReveal]="i + 1"
+    >
+      <div class="timeline__node">
+        <i [class]="job.icon"></i>
+      </div>
+
+      <div class="timeline__card glass-card">
+        <header class="timeline__head">
+          <div>
+            <h3 class="timeline__role">{{ job.role }}</h3>
+            <p class="timeline__company">{{ job.company }} · {{ job.location }}</p>
+          </div>
+          <p-tag [value]="job.period" styleClass="timeline__period"></p-tag>
+        </header>
+
+        <p-tag [value]="job.type" severity="secondary" styleClass="timeline__type"></p-tag>
+
+        <ul class="timeline__list">
+          <li *ngFor="let point of job.highlights">{{ point }}</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>

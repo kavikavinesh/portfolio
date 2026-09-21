@@ -1,0 +1,31 @@
+<section class="projects section">
+  <span class="section-kicker" appReveal>Selected Work</span>
+  <h2 class="section-title" appReveal="1">Projects</h2>
+  <p class="section-sub" appReveal="2">
+    A mix of enterprise platforms and hands-on Generative AI builds — spanning .NET, Angular,
+    FastAPI and Azure AI.
+  </p>
+
+  <div class="projects__grid">
+    <p-card
+      *ngFor="let project of projects; let i = index"
+      styleClass="project-card"
+      [appReveal]="i + 1"
+    >
+      <div class="project-card__icon">
+        <i [class]="project.icon"></i>
+      </div>
+
+      <h3 class="project-card__title">{{ project.title }}</h3>
+      <p class="project-card__summary">{{ project.summary }}</p>
+
+      <ul class="project-card__points">
+        <li *ngFor="let point of project.points">{{ point }}</li>
+      </ul>
+
+      <div class="project-card__tags">
+        <p-chip *ngFor="let tag of project.tags" [label]="tag" styleClass="project-card__chip"></p-chip>
+      </div>
+    </p-card>
+  </div>
+</section>

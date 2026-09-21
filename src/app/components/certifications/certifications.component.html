@@ -1,0 +1,48 @@
+<section class="certs section">
+  <span class="section-kicker" appReveal>Verified Learning</span>
+  <h2 class="section-title" appReveal="1">Certifications</h2>
+  <p class="section-sub" appReveal="2">
+    Backed by a full Microsoft Learn transcript — modules, learning paths and exams logged and
+    verifiable, available as a downloadable PDF below.
+  </p>
+
+  <div class="certs__stats" appReveal="2">
+    <div class="certs__stat" *ngFor="let stat of stats">
+      <span class="certs__stat-value">{{ stat.value }}</span>
+      <span class="certs__stat-label">{{ stat.label }}</span>
+    </div>
+  </div>
+
+  <div class="certs__grid">
+    <div
+      class="certs__card glass-card"
+      *ngFor="let cert of certifications; let i = index"
+      [appReveal]="i + 1"
+    >
+      <div class="certs__card-top">
+        <i class="pi pi-microsoft certs__ms-icon"></i>
+        <p-tag
+          [value]="cert.status"
+          [severity]="cert.status === 'Certified' ? 'success' : 'warn'"
+          styleClass="certs__status"
+        ></p-tag>
+      </div>
+      <h3 class="certs__title">{{ cert.title }}</h3>
+      <p class="certs__code">{{ cert.code }} · {{ cert.issuer }}</p>
+      <p class="certs__date"><i class="pi pi-calendar"></i>{{ cert.date }}</p>
+    </div>
+  </div>
+
+  <div class="certs__download glass-card" appReveal="3">
+    <div class="certs__download-text">
+      <i class="pi pi-file-pdf"></i>
+      <div>
+        <p class="certs__download-title">Full Microsoft Learn Transcript</p>
+        <p class="certs__download-sub">95 modules · 18 learning paths · 75h 18m of training, verified by Microsoft.</p>
+      </div>
+    </div>
+    <a [href]="downloads.msCert.href" [download]="downloads.msCert.filename">
+      <p-button label="Download PDF" icon="pi pi-download" [rounded]="true"></p-button>
+    </a>
+  </div>
+</section>

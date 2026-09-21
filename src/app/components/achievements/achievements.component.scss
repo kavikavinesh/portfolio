@@ -1,0 +1,66 @@
+.achievements__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2.5rem;
+  align-items: start;
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.achievements__award {
+  padding: 0.85rem;
+  overflow: hidden;
+}
+
+::ng-deep .achievements__award-img {
+  width: 100%;
+  display: block;
+  border-radius: calc(var(--radius-lg) - 8px);
+  cursor: zoom-in;
+}
+
+.achievements__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.achievements__item {
+  display: flex;
+  gap: 1.1rem;
+  padding: 1.7rem;
+}
+
+.achievements__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold), var(--maroon));
+  color: var(--bg-0);
+  font-size: 1.1rem;
+}
+
+.achievements__title {
+  font-size: 1.05rem;
+  color: var(--text-0);
+  font-weight: 700;
+}
+
+.achievements__issuer {
+  font-size: 0.8rem;
+  color: var(--gold-soft);
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+.achievements__desc {
+  font-size: 0.9rem;
+  color: var(--text-1);
+  margin-top: 0.6rem;
+}

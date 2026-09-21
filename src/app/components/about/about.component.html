@@ -1,0 +1,33 @@
+<section class="about section">
+  <div class="about__grid">
+    <div class="about__image" appReveal>
+      <div class="about__image-frame">
+        <img [src]="aboutImage" alt="Kavinesh Kumar" loading="lazy" />
+      </div>
+      <div class="about__image-glow"></div>
+    </div>
+
+    <div class="about__content">
+      <span class="section-kicker" appReveal>About Me</span>
+      <h2 class="section-title" appReveal="1">From enterprise systems to AI engineering</h2>
+
+      <p appReveal="2" *ngFor="let para of profile.about; let i = index" [attr.data-reveal-delay]="i + 2" class="about__para">
+        {{ para }}
+      </p>
+
+      <p-divider styleClass="about__divider"></p-divider>
+
+      <div class="about__education" appReveal="4">
+        <h3 class="about__edu-title"><i class="pi pi-graduation-cap"></i> Education</h3>
+        <div class="about__edu-item" *ngFor="let edu of education">
+          <div class="about__edu-dot"></div>
+          <div>
+            <p class="about__edu-school">{{ edu.school }}</p>
+            <p class="about__edu-degree">{{ edu.degree }}</p>
+            <p class="about__edu-meta">{{ edu.period }} · {{ edu.detail }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

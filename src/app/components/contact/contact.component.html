@@ -1,0 +1,39 @@
+<section class="contact section">
+  <div class="contact__panel glass-card" appReveal>
+    <div class="contact__aura"></div>
+
+    <div class="contact__copy">
+      <span class="section-kicker">Get in touch</span>
+      <h2 class="section-title">Let's build something intelligent together</h2>
+      <p class="contact__lede">
+        Open to Software Development and AI Engineering opportunities, collaborations, or just a
+        good conversation about Generative AI in the enterprise. I usually reply within a day.
+      </p>
+
+      <a [href]="downloads.resume.href" [download]="downloads.resume.filename" class="contact__resume-link">
+        <p-button label="Download Resume" icon="pi pi-download" [rounded]="true" [outlined]="true"></p-button>
+      </a>
+    </div>
+
+    <div class="contact__channels">
+      <div class="contact__channel" *ngFor="let ch of channels">
+        <a [href]="ch.href" target="_blank" rel="noopener" class="contact__channel-main">
+          <span class="contact__channel-icon"><i [class]="ch.icon"></i></span>
+          <span>
+            <span class="contact__channel-label">{{ ch.label }}</span>
+            <span class="contact__channel-value">{{ ch.value }}</span>
+          </span>
+        </a>
+        <button
+          *ngIf="ch.copyable"
+          class="contact__copy-btn"
+          type="button"
+          (click)="copy(ch.value)"
+          aria-label="Copy to clipboard"
+        >
+          <i class="pi pi-copy"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

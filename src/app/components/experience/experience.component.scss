@@ -1,0 +1,116 @@
+.timeline {
+  position: relative;
+  padding-left: 2.6rem;
+
+  @media (max-width: 640px) {
+    padding-left: 2.1rem;
+  }
+}
+
+.timeline__rail {
+  position: absolute;
+  left: 19px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold), var(--maroon-soft) 55%, transparent);
+
+  @media (max-width: 640px) {
+    left: 15px;
+  }
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: 2.6rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timeline__node {
+  position: absolute;
+  left: -2.6rem;
+  top: 0.35rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold), var(--maroon));
+  color: var(--bg-0);
+  font-size: 1rem;
+  box-shadow: 0 0 0 6px var(--bg-0), 0 8px 22px -6px rgba(227, 178, 60, 0.5);
+
+  @media (max-width: 640px) {
+    left: -2.1rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+}
+
+.timeline__card {
+  padding: 2rem 2.1rem;
+
+  @media (max-width: 640px) {
+    padding: 1.5rem 1.3rem;
+  }
+}
+
+.timeline__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.timeline__role {
+  font-size: 1.22rem;
+  color: var(--text-0);
+  font-weight: 700;
+}
+
+.timeline__company {
+  margin-top: 0.3rem;
+  color: var(--text-2);
+  font-size: 0.92rem;
+}
+
+::ng-deep .timeline__period.p-tag {
+  background: rgba(227, 178, 60, 0.12) !important;
+  color: var(--gold-soft) !important;
+  font-weight: 600;
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+
+::ng-deep .timeline__type.p-tag {
+  margin-top: 0.9rem;
+  background: rgba(138, 44, 59, 0.18) !important;
+  color: #e79aac !important;
+  font-size: 0.72rem;
+  display: inline-flex;
+}
+
+.timeline__list {
+  margin: 1.2rem 0 0;
+  padding-left: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  li {
+    color: var(--text-1);
+    font-size: 0.94rem;
+    line-height: 1.65;
+    position: relative;
+
+    &::marker {
+      color: var(--gold);
+    }
+  }
+}
