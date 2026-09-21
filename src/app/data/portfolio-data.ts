@@ -66,7 +66,7 @@ export const PROFILE = {
   about: [
     "I'm a Software Developer currently at Boeing, Chennai, working on aerospace component-management systems — before that I spent over three years at Accenture shipping enterprise-grade .NET and Angular applications for global clients.",
     "My core strength is building N-Tier and microservice systems end-to-end: ASP.NET Core APIs, Angular front-ends, SQL Server data layers, and OWASP-hardened security, deployed on Azure and Cloud Foundry with proper CI/CD.",
-    "Over the last year I've been deliberately moving deeper into AI engineering — integrating LLMs from Azure AI Foundry and the Claude API into production workflows, and exploring RAG and agentic architectures. This portfolio itself was designed and shipped with Claude as a build partner."
+    "Over the last year I've been deliberately moving deeper into AI engineering — integrating LLMs from Azure AI Foundry and the Claude API into production workflows, and exploring RAG and agentic architectures."
   ],
   stats: [
     { value: '4+', label: 'Years of experience' },
