@@ -62,6 +62,8 @@ export const PROFILE = {
   phone: '+91 7502007455',
   linkedin: 'https://linkedin.com/in/kavinesh-kumar-s-0a8351159',
   linkedinLabel: 'linkedin.com/in/kavinesh-kumar-s-0a8351159',
+  github: 'https://github.com/kavikavinesh',
+  githubLabel: 'github.com/kavikavinesh',
   yearsExperience: 4,
   about: [
     "I'm a Software Developer currently at Boeing, Chennai, working on aerospace component-management systems — before that I spent over three years at Accenture shipping enterprise-grade .NET and Angular applications for global clients.",

@@ -45,6 +45,12 @@ export class ContactComponent {
       value: PROFILE.linkedinLabel,
       href: PROFILE.linkedin,
       icon: 'pi pi-linkedin'
+    },
+    {
+      label: 'GitHub',
+      value: PROFILE.githubLabel,
+      href: PROFILE.github,
+      icon: 'pi pi-github'
     }
   ];
 
