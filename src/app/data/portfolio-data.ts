@@ -20,6 +20,8 @@ export interface ProjectItem {
   tags: string[];
   icon: string;
   points: string[];
+  repoUrl?: string;
+  readmeUrl?: string;
 }
 
 export interface SkillGroup {
@@ -146,7 +148,9 @@ export const PROJECTS: ProjectItem[] = [
     points: [
       'Integrated Azure AI Foundry LLMs into a .NET service layer with end-to-end deployment pipelines.',
       'Designed prompt and response-handling patterns for reliable, production-grade AI features.'
-    ]
+    ],
+    repoUrl: 'https://github.com/kavikavinesh/Chatbot-',
+    readmeUrl: 'https://raw.githubusercontent.com/kavikavinesh/Chatbot-/master/README.md'
   },
   {
     title: 'Python API with Claude AI Integration',
@@ -160,15 +164,23 @@ export const PROJECTS: ProjectItem[] = [
     ]
   },
   {
-    title: 'Aircraft Component Management Platform',
+    title: 'Lumel Interview — ASP.NET Web API',
     summary:
-      'An N-Tier Angular + .NET platform at Boeing for tracking aircraft component servicing, maintenance and full traceability.',
-    tags: ['Angular', '.NET', 'Cloud Foundry', 'N-Tier'],
-    icon: 'pi pi-send',
-    points: [
-      'Modular, pattern-driven architecture (Repository, DI, component-driven design) across separated layers.',
-      '100% component traceability via disciplined GitLab version control and CI/CD.'
-    ]
+      'Interview assignment built with ASP.NET Web API (.NET 8), C# and SQL Server, exposing customer analysis endpoints backed by stored procedures.',
+    tags: ['ASP.NET', 'C#', '.NET 8', 'SQL Server', 'Swagger'],
+    icon: 'pi pi-database',
+    points: [],
+    repoUrl: 'https://github.com/kavikavinesh/LumelInterview/tree/master',
+    readmeUrl: 'https://raw.githubusercontent.com/kavikavinesh/LumelInterview/master/README.md'
+  },
+  {
+    title: 'Python Fundamentals',
+    summary: 'A personal Python learning repository covering what Python is, what it can do and why it is used.',
+    tags: ['Python'],
+    icon: 'pi pi-code',
+    points: [],
+    repoUrl: 'https://github.com/kavikavinesh/python-',
+    readmeUrl: 'https://raw.githubusercontent.com/kavikavinesh/python-/master/README.md'
   }
 ];
 
@@ -191,7 +203,12 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     title: 'AI & Intelligent Systems',
     icon: 'pi pi-sparkles',
-    skills: ['Generative AI', 'Agentic AI', 'LLMs', 'RAG', 'SLM', 'Azure AI Foundry', 'Claude AI APIs', 'GitHub Copilot']
+    skills: ['Generative AI', 'Agentic AI', 'LLMs', 'RAG', 'SLM', 'Azure AI Foundry', 'Claude AI APIs']
+  },
+  {
+    title: 'AI Tools',
+    icon: 'pi pi-microchip-ai',
+    skills: ['Kiro', 'GitHub Copilot', 'Claude', 'Codex CLI']
   },
   {
     title: 'Security & Quality',

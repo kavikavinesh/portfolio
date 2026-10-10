@@ -11,6 +11,7 @@
       *ngFor="let project of projects; let i = index"
       styleClass="project-card"
       [appReveal]="i + 1"
+      [class.project-card--repo]="!!project.repoUrl"
     >
       <div class="project-card__icon">
         <i [class]="project.icon"></i>
@@ -19,7 +20,29 @@
       <h3 class="project-card__title">{{ project.title }}</h3>
       <p class="project-card__summary">{{ project.summary }}</p>
 
-      <ul class="project-card__points">
+      <div
+        *ngIf="project.readmeUrl as url"
+        class="project-card__readme"
+        role="link"
+        tabindex="0"
+        title="Open repository on GitHub"
+        (click)="openRepo(project.repoUrl)"
+        (keydown.enter)="openRepo(project.repoUrl)"
+      >
+        <span class="project-card__readme-label"><i class="pi pi-github"></i> README</span>
+        <div
+          *ngIf="readmes()[url] && readmes()[url] !== 'error'; else readmeState"
+          class="project-card__readme-body"
+          [innerHTML]="readmes()[url]"
+        ></div>
+        <ng-template #readmeState>
+          <p class="project-card__readme-note">
+            {{ readmes()[url] === 'error' ? 'README unavailable — click to open the repository.' : 'Loading README…' }}
+          </p>
+        </ng-template>
+      </div>
+
+      <ul class="project-card__points" *ngIf="project.points.length">
         <li *ngFor="let point of project.points">{{ point }}</li>
       </ul>
 
